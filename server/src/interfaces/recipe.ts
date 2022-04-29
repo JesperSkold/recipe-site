@@ -3,19 +3,19 @@ export interface Recipe {
   description: string
   imageUrl: string
   timeInMins: string
-  ratings: string[]
+  ratings: number[]
   category: string[]
-  ingredient: Ingredient
-  instructions: Instruction
+  ingredients: Ingredient[]
+  instructions: string[]
 }
 
-interface Ingredient {
+export interface Ingredient {
   ingredient: string
   amount: number
-  unit : string
+  unit: string
 }
 
-interface Instruction {
-  instruction: string
-  prio: number
-}
+// export interface Instruction {
+//   instruction: string
+//   prio: number
+// }
