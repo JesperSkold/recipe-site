@@ -14,9 +14,9 @@ connect(`${process.env.DB_URI}`, {
  } as ConnectOptions).catch(err => console.log(err))
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
-app.use('/', recipeRouter)
+app.use('/recipes', recipeRouter)
 
 // app.get('/', (req, res) => {
 //   res.send('Express + TypeScript Server');
