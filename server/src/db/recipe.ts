@@ -1,4 +1,3 @@
-import { ParsedQs } from "qs"
 import Recipe from "../models/recipe"
 
 export const getRecipes = async () => {

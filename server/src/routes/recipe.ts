@@ -16,11 +16,7 @@ router.get("/", async (req, res) => {
 router.get("/:recipeId", async (req, res) => {
   const id = req.params.recipeId
   const recipes = await getRecipesById(id)
-  // const recipes = await getRecipesById(req.params)
   res.json(recipes)
-	// console.log("PARAM ROUTER");
-	// console.log(req.params, "PARAM ROUTER");
-	// res.json(recipes)
 });
 
 export default router;
