@@ -2,6 +2,7 @@ import express from "express"
 import {connect, ConnectOptions} from "mongoose"
 import dotenv from "dotenv"
 import path from "path"
+import cors from "cors"
 
 import recipeRouter from "./routes/recipe"
 import categoryRouter from "./routes/category"
@@ -16,6 +17,7 @@ connect(`${process.env.DB_URI}`, {
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(cors())
 
 app.use('/recipes', recipeRouter)
 app.use('/category', categoryRouter)

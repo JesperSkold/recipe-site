@@ -19,10 +19,4 @@ router.get('/:categoryId/recipes', async (req, res) => {
   }
 })
 
-// router.get('/:categoryId/recipes/?search', async (req, res) => {
-//   console.log(req.params, "PARAMS");
-//   console.log(req.query, "PARAMS");
-  
-// })
-
 export default router
