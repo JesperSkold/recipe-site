@@ -1,19 +1,15 @@
-import React, {useState, useEffect} from 'react'
-import { getRecipes } from '../api/getRecipes'
-import { Recipe } from '../interfaces/recipe'
-const HomePage = () => {
-  const [recipes, setRecipes] = useState<Recipe[]>([])
- 
-  useEffect(() => {
-    const getAllRecipes = async () => {
-      const recipes = await getRecipes()
-      setRecipes(recipes)
-    }
-    getAllRecipes()
-  }, [])
+import React from 'react'
+import SearchBar from './SearchBar'
+import SideBar from './SideBar'
+import RecipeList from './RecipeList'
 
+const HomePage = () => {
   return (
-    <ul>{recipes.map(recipe => <li key={recipe._id}>{recipe.title}</li>)}</ul>
+    <>
+    <SearchBar></SearchBar>
+    <SideBar></SideBar>
+    <RecipeList></RecipeList>
+    </>
   )
 }
 
