@@ -1,7 +1,7 @@
 import React from 'react'
-import SearchBar from './SearchBar'
-import SideBar from './SideBar'
-import RecipeList from './RecipeList'
+import SearchBar from '../SearchBar'
+import SideBar from '../SideBar'
+import RecipeList from '../RecipeList'
 
 const HomePage = () => {
   return (

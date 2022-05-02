@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { getRecipes } from '../api/getRecipes'
-import { Recipe } from '../interfaces/recipe'
+import { getRecipes } from '../../api/getRecipes'
+import { Recipe } from '../../interfaces/recipe'
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([])

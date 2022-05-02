@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { getCategories } from '../api/getCategory'
-import { Categories } from "../interfaces/category"
+import { getCategories } from '../../api/getCategory'
+import { Categories } from "../../interfaces/category"
+import { StyledAside } from "./style"
+
 const SideBar = () => {
   const [category, setCategory] = useState<Categories[]>([])
  
@@ -13,7 +15,9 @@ const SideBar = () => {
     getAllCategories()
   }, [])
   return (
+    <StyledAside>
     <ul>{category.map(category => <li key={category._id}>{category.category}</li>)}</ul>
+    </StyledAside>
   )
 }
 
