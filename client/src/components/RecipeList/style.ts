@@ -50,3 +50,17 @@ margin-left: 1rem;
 export const StyledRating = styled.h1`
 font-size: 1.5rem;
 `
+
+export const RecipeButton = styled.button`
+margin-left: 20rem;
+height: 2.5rem;
+align-self: center;
+background-color:#125B50;
+color: white;
+border-radius: 1rem;
+&:hover {
+	cursor: pointer;
+	background: none;
+	color: black;
+}
+`
