@@ -1,16 +1,19 @@
-import React from 'react'
-import SearchBar from '../SearchBar'
-import SideBar from '../SideBar'
-import RecipeList from '../RecipeList'
+import React from "react";
+import SearchBar from "../SearchBar";
+import SideBar from "../SideBar";
+import RecipeList from "../RecipeList";
+import { StyledWrapper, StyledMain } from "./style";
 
 const HomePage = () => {
-  return (
-    <>
-    <SearchBar></SearchBar>
-    <SideBar></SideBar>
-    <RecipeList></RecipeList>
-    </>
-  )
-}
+	return (
+		<StyledWrapper>
+			<SideBar></SideBar>
+			<StyledMain>
+				<SearchBar></SearchBar>
+				<RecipeList></RecipeList>
+			</StyledMain>
+		</StyledWrapper>
+	);
+};
 
-export default HomePage
+export default HomePage;

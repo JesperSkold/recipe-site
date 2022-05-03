@@ -1,8 +1,9 @@
 import React from 'react'
+import { StyledSearchBar } from './style'
 
 const SearchBar = () => {
   return (
-    <div>SearchBar</div>
+    <StyledSearchBar placeholder='  Sök bland dina favoritrecept...'></StyledSearchBar>
   )
 }
 
