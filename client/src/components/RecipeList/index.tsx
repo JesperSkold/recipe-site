@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getRecipes } from "../../api/getRecipes";
 import { Recipe } from "../../interfaces/recipe";
+import { Link } from "react-router-dom";
 import { StyledImg, StyledArticle, FlexDiv, StyledDescription, StyledTitle, StyledRating, FlexColumnDiv, TitleRatingBox, StyledSection, RecipeInfo, RecipeButton } from "./style";
 
 const RecipeList = () => {
@@ -31,7 +32,7 @@ const RecipeList = () => {
 						<RecipeInfo>
 							{recipe.ingredients.length} INGREDIENSER | {recipe.timeInMins}
 						</RecipeInfo>
-						<RecipeButton>Ta mig till receptet!</RecipeButton>
+						<Link to={`/recipes/${recipe._id}`}><RecipeButton>Ta mig till receptet!</RecipeButton></Link>
 					</FlexDiv>
 				</StyledArticle>
 			))}
