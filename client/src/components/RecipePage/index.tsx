@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getRecipeById } from "../../api/getRecipes";
 import { Recipe } from "../../interfaces/recipe";
 import { useParams } from "react-router-dom";
+import StarRating from "../StarRating";
 import {
 	RecipeImg,
 	StyledMain,
@@ -34,7 +35,6 @@ const RecipePage = () => {
 		};
 		getSingleRecipe();
 	}, [recipeId]);
-	console.log(recipe);
 
 	return (
 		<>
@@ -59,25 +59,21 @@ const RecipePage = () => {
 					<IngredientInstructionContainer>
 						<IngredientUl>
 							{recipe[0].ingredients.map((ingredient) => (
-								<IngredientLi>
-									{ingredient.amount} {ingredient.unit} {ingredient.ingredient}
-								</IngredientLi>
-							))}
-							{recipe[0].ingredients.map((ingredient) => (
-								<IngredientLi>
+								<IngredientLi key={ingredient.ingredient}>
 									{ingredient.amount} {ingredient.unit} {ingredient.ingredient}
 								</IngredientLi>
 							))}
 						</IngredientUl>
 						<InstructionUl>
 							{recipe[0].instructions.map((instruction) => (
-								<InstructionLi>{instruction}</InstructionLi>
+								<InstructionLi key={instruction}>{instruction}</InstructionLi>
 							))}
 						</InstructionUl>
 					</IngredientInstructionContainer>
 					<RatingContainer>
 						<RatingTitle>Vad tyckte du om receptet?</RatingTitle>
 						<RatingSubTitle>Klicka på en stjärna för att ge ditt betyg</RatingSubTitle>
+						<StarRating></StarRating>
 					</RatingContainer>
 				</StyledMain>
 			)}
