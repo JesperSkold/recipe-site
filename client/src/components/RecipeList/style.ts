@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from "../../styles/global-colors";
 
 export const StyledImg = styled.img`
 	height: auto;
@@ -8,7 +9,7 @@ export const StyledImg = styled.img`
 
 export const StyledArticle = styled.article`
 	margin: 1rem;
-  background-color:#FEE2C5;
+  background-color:${COLORS.primary};
 	padding: 1rem;
   height: 15rem;
 `;
@@ -52,10 +53,8 @@ font-size: 1.5rem;
 `
 
 export const RecipeButton = styled.button`
-margin-left: 20rem;
 height: 2.5rem;
-align-self: center;
-background-color:#125B50;
+background-color:${COLORS.secondary};
 color: white;
 border-radius: 1rem;
 &:hover {
@@ -63,4 +62,9 @@ border-radius: 1rem;
 	background: none;
 	color: black;
 }
+`
+
+export const FooterWrapper = styled.div`
+display: flex;
+justify-content: space-between
 `

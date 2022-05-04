@@ -2,7 +2,20 @@ import React, { useState, useEffect } from "react";
 import { getRecipes } from "../../api/getRecipes";
 import { Recipe } from "../../interfaces/recipe";
 import { Link } from "react-router-dom";
-import { StyledImg, StyledArticle, FlexDiv, StyledDescription, StyledTitle, StyledRating, FlexColumnDiv, TitleRatingBox, StyledSection, RecipeInfo, RecipeButton } from "./style";
+import {
+	StyledImg,
+	StyledArticle,
+	FlexDiv,
+	StyledDescription,
+	StyledTitle,
+	StyledRating,
+	FlexColumnDiv,
+	TitleRatingBox,
+	StyledSection,
+	RecipeInfo,
+	RecipeButton,
+	FooterWrapper,
+} from "./style";
 
 const RecipeList = () => {
 	const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -28,12 +41,14 @@ const RecipeList = () => {
 							<StyledDescription>{recipe.description}</StyledDescription>
 						</FlexColumnDiv>
 					</FlexDiv>
-					<FlexDiv>
+						<FooterWrapper>
 						<RecipeInfo>
 							{recipe.ingredients.length} INGREDIENSER | {recipe.timeInMins}
 						</RecipeInfo>
-						<Link to={`/recipes/${recipe._id}`}><RecipeButton>Ta mig till receptet!</RecipeButton></Link>
-					</FlexDiv>
+							<Link to={`/recipes/${recipe._id}`} style={{alignSelf:"center"}}>
+								<RecipeButton>Ta mig till receptet!</RecipeButton>
+							</Link>
+						</FooterWrapper>
 				</StyledArticle>
 			))}
 		</StyledSection>
