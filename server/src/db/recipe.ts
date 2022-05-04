@@ -14,3 +14,7 @@ export const getRecipesById = async (id:string) => {
   const recipes = await Recipe.find({"_id": id})
   return recipes
 }
+
+export const postRecipeRating = async (id:string, rating:number) => {
+   await Recipe.findByIdAndUpdate(id, {$push: {"ratings": [rating]}} )
+}

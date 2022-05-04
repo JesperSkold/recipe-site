@@ -1,5 +1,5 @@
 import express from "express";
-import { getRecipes, getRecipesById, getRecipesByQuery } from "../db/recipe";
+import { getRecipes, getRecipesById, getRecipesByQuery, postRecipeRating } from "../db/recipe";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -18,5 +18,12 @@ router.get("/:recipeId", async (req, res) => {
   const recipes = await getRecipesById(id)
   res.json(recipes)
 });
+
+router.post("/:recipeId/:rating", async (req, res) => {
+	const id = req.params.recipeId
+	const rating = Number(req.params.rating)
+	await postRecipeRating(id, rating)
+	res.json()
+})
 
 export default router;
