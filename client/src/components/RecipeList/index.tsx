@@ -20,7 +20,7 @@ import {
 
 const RecipeList = () => {
 	const [recipes, setRecipes] = useState<Recipe[]>([]);
-
+	
 	const calcAvgRating = (rating: number[]) => {
 		return Math.round(rating.reduce((a: any, b: any) => a + b, 0) / rating.length);
 	};

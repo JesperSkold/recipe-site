@@ -3,6 +3,7 @@ import { getRecipeById } from "../../api/getRecipes";
 import { Recipe } from "../../interfaces/recipe";
 import { useParams } from "react-router-dom";
 import StarRating from "../StarRating";
+import Ratings from "../RecipeListRatings";
 import {
 	RecipeImg,
 	StyledMain,
@@ -28,6 +29,10 @@ const RecipePage = () => {
 	const { recipeId } = useParams();
 	const [recipe, setRecipe] = useState<Recipe[]>([]);
 	const [showRating, setShowRating] = useState(true);
+	
+	const calcAvgRating = (rating: number[]) => {
+		return Math.round(rating.reduce((a: any, b: any) => a + b, 0) / rating.length);
+	};
 
 	useEffect(() => {
 		const getSingleRecipe = async () => {
@@ -47,7 +52,7 @@ const RecipePage = () => {
 							<DescriptionMeta>
 								<Description>{recipe[0].description}</Description>
 								<DescriptionInfo>
-									{Math.round(recipe[0].ratings.reduce((a, b) => a + b, 0) / recipe[0].ratings.length)}/5 | {recipe[0].ingredients.length} ingredienser | {recipe[0].timeInMins}
+									<Ratings rating={calcAvgRating(recipe[0].ratings)}></Ratings> | {recipe[0].ingredients.length} ingredienser | {recipe[0].timeInMins}
 								</DescriptionInfo>
 							</DescriptionMeta>
 							<RecipeImg src={recipe[0].imageUrl}></RecipeImg>

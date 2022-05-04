@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Description = styled.p`
-	width: 20rem;
 	overflow-wrap: break-word;
 	padding: 1rem;
 `;
@@ -34,11 +33,18 @@ export const DescriptionDiv = styled.div`
 	display: flex;
 `;
 
-export const DescriptionInfo = styled.p`
+export const DescriptionInfo = styled.div`
 	background: ${COLORS.secondary};
 	color: white;
 	padding: 1rem;
 	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	h1{
+		margin-top: 12px;
+		margin-right: 10px;
+	}
 `;
 
 export const IngredientUl = styled.ul`
