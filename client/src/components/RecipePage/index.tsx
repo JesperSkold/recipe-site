@@ -27,6 +27,7 @@ import {
 const RecipePage = () => {
 	const { recipeId } = useParams();
 	const [recipe, setRecipe] = useState<Recipe[]>([]);
+	const [showRating, setShowRating] = useState(true);
 
 	useEffect(() => {
 		const getSingleRecipe = async () => {
@@ -70,11 +71,17 @@ const RecipePage = () => {
 							))}
 						</InstructionUl>
 					</IngredientInstructionContainer>
-					<RatingContainer>
-						<RatingTitle>Vad tyckte du om receptet?</RatingTitle>
-						<RatingSubTitle>Klicka på en stjärna för att ge ditt betyg</RatingSubTitle>
-						<StarRating></StarRating>
-					</RatingContainer>
+					{showRating ? (
+						<RatingContainer>
+							<RatingTitle>Vad tyckte du om receptet?</RatingTitle>
+							<RatingSubTitle>Klicka på en stjärna för att ge ditt betyg</RatingSubTitle>
+							<StarRating setShowRating={setShowRating} showRating={showRating}></StarRating>
+						</RatingContainer>
+					) : (
+						<RatingContainer>
+							<RatingTitle>Tack för ditt betyg!</RatingTitle>
+						</RatingContainer>
+					)}
 				</StyledMain>
 			)}
 		</>
