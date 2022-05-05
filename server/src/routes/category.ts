@@ -1,5 +1,5 @@
 import express from "express"
-import {getCategories, getRecipeByCategoryId, getRecipeByCategoryQuery} from "../db/category"
+import {getCategories, getRecipeByCategoryName, getRecipeByCategoryQuery, getCategoryCount} from "../db/category"
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -7,16 +7,22 @@ router.get('/', async (req, res) => {
   res.json(categories)
 })
 
-router.get('/:categoryId/recipes', async (req, res) => {
-  const id = req.params.categoryId
+router.get('/:categoryName/recipes', async (req, res) => {
+  const categoryName = req.params.categoryName
   if (req.query.search) {
     const searchQuery = req.query.search as string
-		const recipes = await getRecipeByCategoryQuery(searchQuery, id);
+		const recipes = await getRecipeByCategoryQuery(searchQuery, categoryName);
 		res.json(recipes);
   }else{
-    const recipes = await getRecipeByCategoryId(id)
+    const recipes = await getRecipeByCategoryName(categoryName)
     res.json(recipes)
   }
+})
+
+router.get('/:categoryName/count', async (req, res) => {
+  const categoryName = req.params.categoryName
+  const categoryCount = await getCategoryCount(categoryName)
+  res.json(categoryCount.length)
 })
 
 export default router

@@ -46,7 +46,7 @@ font-size: 1.5rem;
 overflow-wrap: break-word;
 width: 20rem;
 margin-left: 1rem;
-/* align-self: center; */
+align-self: center;
 `;
 
 export const StyledRating = styled.h1`
