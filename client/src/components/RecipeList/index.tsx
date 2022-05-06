@@ -17,22 +17,25 @@ import {
 	RecipeButton,
 	FooterWrapper,
 } from "./style";
+import { useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "../../app/store";
+import { useSelector } from "react-redux";
+import { getAllRecipes } from "../../features/recipeSlice";
 
 const RecipeList = () => {
-	const [recipes, setRecipes] = useState<Recipe[]>([]);
+	
+	const dispatch = useDispatch<AppDispatch>()
+	const {recipes} = useSelector((state:RootState) => state.recipes)
 	
 	const calcAvgRating = (rating: number[]) => {
 		return Math.round(rating.reduce((a: any, b: any) => a + b, 0) / rating.length);
 	};
 
 	useEffect(() => {
-		const getAllRecipes = async () => {
-			const recipes = await getRecipes();
-			setRecipes(recipes);
-		};
-		getAllRecipes();
-	}, []);
-	return (
+		dispatch(getAllRecipes())
+		}, []);
+
+		return (
 		<StyledSection>
 			{recipes.map((recipe) => (
 				<StyledArticle key={recipe._id}>

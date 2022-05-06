@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
 import HomePage from "./components/HomePage";
 import RecipePage from "./components/RecipePage";
+
 const App = () => {
 	return (
     <>
@@ -17,5 +18,4 @@ const App = () => {
 	);
 };
 
-{/* <div>App</div> */}
 export default App;
