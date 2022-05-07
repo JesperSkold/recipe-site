@@ -44,7 +44,7 @@ const RecipePage = () => {
 
 	return (
 		<>
-			{recipe.length && (
+			{recipe.length > 0 && (
 				<StyledMain>
 					<Wrapper>
 						<RecipeTitle>{recipe[0].title}</RecipeTitle>{" "}

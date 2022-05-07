@@ -1,11 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getRecipes } from "../api/getRecipes"
+import { getRecipes, getRecipesByCategoryName } from "../api/getRecipes"
 import { Recipe } from "../interfaces/recipe";
 
 export const getAllRecipes = createAsyncThunk(
   "recipes/getAllRecipes",
   async () => {
     return await getRecipes()
+  }
+)
+
+export const getAllRecipesByCategoryName = createAsyncThunk(
+  "recipes/getAllRecipesByCategoryName",
+  async (category:any) => {
+    return await getRecipesByCategoryName(category)
   }
 )
 
@@ -32,6 +39,16 @@ export const recipeSlice = createSlice({
       state.recipes = action.payload
     })
     builder.addCase(getAllRecipes.rejected, (state, action) => {
+      state.loading = "rejected"
+    })
+    builder.addCase(getAllRecipesByCategoryName.pending, (state, action) => {
+      state.loading = "pending"
+    })
+    builder.addCase(getAllRecipesByCategoryName.fulfilled, (state, action) => {
+      state.loading = "succeeded"
+      state.recipes = action.payload
+    })
+    builder.addCase(getAllRecipesByCategoryName.rejected, (state, action) => {
       state.loading = "rejected"
     })
   }

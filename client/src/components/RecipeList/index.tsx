@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { getRecipes } from "../../api/getRecipes";
-import { Recipe } from "../../interfaces/recipe";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import Ratings from "../RecipeListRatings";
 import {
 	StyledImg,
@@ -9,7 +7,6 @@ import {
 	FlexDiv,
 	StyledDescription,
 	StyledTitle,
-	StyledRating,
 	FlexColumnDiv,
 	TitleRatingBox,
 	StyledSection,
@@ -20,10 +17,10 @@ import {
 import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../app/store";
 import { useSelector } from "react-redux";
-import { getAllRecipes } from "../../features/recipeSlice";
+import { getAllRecipes, getAllRecipesByCategoryName } from "../../features/recipeSlice";
 
 const RecipeList = () => {
-	
+	const {categoryName} = useParams()
 	const dispatch = useDispatch<AppDispatch>()
 	const {recipes} = useSelector((state:RootState) => state.recipes)
 	
@@ -32,9 +29,13 @@ const RecipeList = () => {
 	};
 
 	useEffect(() => {
-		dispatch(getAllRecipes())
-		}, []);
-		
+		if (categoryName) {
+			dispatch(getAllRecipesByCategoryName(categoryName))
+		}else{
+			dispatch(getAllRecipes())
+		}
+		}, [categoryName]);
+
 		return (
 		<StyledSection>
 			{recipes && recipes.map((recipe) => (

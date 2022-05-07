@@ -9,3 +9,10 @@ export const getRecipeById = async (recipeId:string) => {
   const recipe = await response.json()
   return recipe
 }
+
+export const getRecipesByCategoryName = async (categoryName:any) => {
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/category/${categoryName}/recipes`)
+  const recipe = await response.json()
+  return recipe
+  
+}
