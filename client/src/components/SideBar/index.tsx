@@ -36,7 +36,7 @@ const SideBar = () => {
 				))}
 			</StyledUl>
 			<HomeLink to={"/"} onClick={() => dispatch(getAllRecipes())}>
-				{Object.getOwnPropertyNames(params).length > 0 && <StyledParagraph>Visa alla rätter</StyledParagraph>}
+				{Object.getOwnPropertyNames(params).length > 0 && <StyledParagraph>Visa alla</StyledParagraph>}
 			</HomeLink>
 			</TextWrapper>
 		</StyledAside>

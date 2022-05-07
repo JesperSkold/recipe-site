@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getRecipes, getRecipesByCategoryName } from "../api/getRecipes"
+import { getRecipes, getRecipesByCategoryName, getRecipeByQuery } from "../api/getRecipes"
 import { Recipe } from "../interfaces/recipe";
 
 export const getAllRecipes = createAsyncThunk(
@@ -13,6 +13,15 @@ export const getAllRecipesByCategoryName = createAsyncThunk(
   "recipes/getAllRecipesByCategoryName",
   async (category:any) => {
     return await getRecipesByCategoryName(category)
+  }
+)
+
+export const getAllRecipesByCategoryQuery = createAsyncThunk(
+  "recipes/getAllRecipesByCategoryQuery",
+  async (payload:any) => {
+    const {categoryName, searchTerm} = payload
+    console.log(categoryName, searchTerm);
+    return await getRecipeByQuery(categoryName, searchTerm)
   }
 )
 
@@ -41,6 +50,7 @@ export const recipeSlice = createSlice({
     builder.addCase(getAllRecipes.rejected, (state, action) => {
       state.loading = "rejected"
     })
+
     builder.addCase(getAllRecipesByCategoryName.pending, (state, action) => {
       state.loading = "pending"
     })
@@ -51,6 +61,18 @@ export const recipeSlice = createSlice({
     builder.addCase(getAllRecipesByCategoryName.rejected, (state, action) => {
       state.loading = "rejected"
     })
+
+    builder.addCase(getAllRecipesByCategoryQuery.pending, (state, action) => {
+      state.loading = "pending"
+    })
+    builder.addCase(getAllRecipesByCategoryQuery.fulfilled, (state, action) => {
+      state.loading = "succeeded"
+      state.recipes = action.payload
+    })
+    builder.addCase(getAllRecipesByCategoryQuery.rejected, (state, action) => {
+      state.loading = "rejected"
+    })
+    
   }
 })
 

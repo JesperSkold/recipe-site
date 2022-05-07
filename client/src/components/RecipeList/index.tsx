@@ -13,6 +13,7 @@ import {
 	RecipeInfo,
 	RecipeButton,
 	FooterWrapper,
+	ErrorMessage
 } from "./style";
 import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../app/store";
@@ -38,7 +39,7 @@ const RecipeList = () => {
 
 		return (
 		<StyledSection>
-			{recipes && recipes.map((recipe) => (
+			{recipes.length > 0 ? recipes.map((recipe) => (
 				<StyledArticle key={recipe._id}>
 					<FlexDiv>
 						<StyledImg src={recipe.imageUrl} alt={`Picture of ${recipe.title}`} />
@@ -59,7 +60,7 @@ const RecipeList = () => {
 						</Link>
 					</FooterWrapper>
 				</StyledArticle>
-			))}
+			)) : <ErrorMessage>Här var det tomt!</ErrorMessage>}
 		</StyledSection>
 	);
 };

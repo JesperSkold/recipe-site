@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../styles/global-colors";
+import { COLORS } from "../../global-styles/global-colors";
 
 export const StyledImg = styled.img`
 	object-fit: cover;
@@ -14,7 +14,13 @@ export const StyledArticle = styled.article`
 	background-color: ${COLORS.primary};
 	padding: 1rem;
 	height: 15rem;
+	width: 40rem;
 `;
+
+export const ErrorMessage = styled.h1`
+	width: 45rem;
+	text-align: center;
+`
 
 export const StyledSection = styled.section``;
 

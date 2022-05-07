@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import GlobalStyles from "./GlobalStyles";
+import GlobalStyles from "./global-styles/GlobalStyles";
 import HomePage from "./components/HomePage";
 import RecipePage from "./components/RecipePage";
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../styles/global-colors";
+import { COLORS } from "../../global-styles/global-colors";
 
 export const RecipeImg = styled.img`
 height:auto;
