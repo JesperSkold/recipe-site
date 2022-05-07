@@ -21,7 +21,7 @@ export const StyledParagraph = styled.p`
 
 export const StyledAside = styled.aside`
 	background-color: #125b50;
-	width: 12vw;
+	width: 12.5vw;
 	padding: 0 1rem 0 1rem;
 	min-height: 100vh;
 	color: white;
@@ -35,7 +35,8 @@ export const StyledUl = styled.ul`
 	margin: 0;
 `;
 
-export const StyledLi = styled.li`
+export const Category = styled.li`
+	margin-top: .5rem;
 	&:hover {
 		cursor: pointer;
 	}

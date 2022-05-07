@@ -57,6 +57,9 @@ export const IngredientLi = styled.li`
 margin-top:1rem;
 width: 15rem;
 overflow-wrap: break-word;
+&:first-child{
+		margin-top: 0;
+	}
 `;
 
 export const IngredientInstructionContainer = styled.div`
@@ -71,6 +74,9 @@ export const InstructionLi = styled.li`
 	background: ${COLORS.secondary};
   overflow-wrap: break-word;
   width: 30rem;
+	&:first-child{
+		margin-top: 0;
+	}
 	&:nth-child(odd) {
 		background: ${COLORS["secondary-variant"]};
 	}

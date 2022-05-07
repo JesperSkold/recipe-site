@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { getCategories } from "../../api/getCategory";
-import { StyledAside, StyledH1, StyledUl, StyledLi, HomeLink, RecipeLink, TextWrapper, StyledParagraph } from "./style";
+import { StyledAside, StyledH1, StyledUl, Category, HomeLink, RecipeLink, TextWrapper, StyledParagraph } from "./style";
 import { useParams } from "react-router-dom";
 import CategoryAmount from "../CategoryAmount";
 import { useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../app/store";
-import { useSelector } from "react-redux";
-import { getAllRecipesByCategoryName, getAllRecipes } from "../../features/recipeSlice";
+import { AppDispatch } from "../../app/store";
+import { getAllRecipes } from "../../features/recipeSlice";
 
 const SideBar = () => {
 	const params = useParams()
@@ -28,10 +27,10 @@ const SideBar = () => {
 			<StyledUl>
 				{category.map((category) => (
 					<RecipeLink to={`/category/${category}`} key={category} style={{ color: "white" }}>
-						<StyledLi>
+						<Category>
 							{category.charAt(0).toUpperCase() + category.slice(1)}
 							<CategoryAmount category={category}></CategoryAmount>
-						</StyledLi>
+						</Category>
 					</RecipeLink>
 				))}
 			</StyledUl>

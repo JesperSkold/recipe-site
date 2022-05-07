@@ -13,12 +13,11 @@ export const StyledArticle = styled.article`
 	margin: 1rem;
 	background-color: ${COLORS.primary};
 	padding: 1rem;
-	height: 15rem;
 	width: 40rem;
 `;
 
 export const ErrorMessage = styled.h1`
-	width: 45rem;
+	width: 44rem;
 	text-align: center;
 `
 
@@ -46,7 +45,6 @@ export const RecipeInfo = styled.h1`
 export const FlexColumnDiv = styled.div`
 	display: flex;
 	flex-direction: column;
-	height: 10rem;
 `;
 
 export const StyledTitle = styled.h1`
@@ -77,4 +75,5 @@ export const RecipeButton = styled.button`
 export const FooterWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
+	margin-top: 1rem;
 `;
