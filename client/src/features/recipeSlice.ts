@@ -3,7 +3,7 @@ import { getRecipes } from "../api/getRecipes"
 import { Recipe } from "../interfaces/recipe";
 
 export const getAllRecipes = createAsyncThunk(
-  "/",
+  "recipes/getAllRecipes",
   async () => {
     return await getRecipes()
   }

@@ -34,10 +34,10 @@ const RecipeList = () => {
 	useEffect(() => {
 		dispatch(getAllRecipes())
 		}, []);
-
+		
 		return (
 		<StyledSection>
-			{recipes.map((recipe) => (
+			{recipes && recipes.map((recipe) => (
 				<StyledArticle key={recipe._id}>
 					<FlexDiv>
 						<StyledImg src={recipe.imageUrl} alt={`Picture of ${recipe.title}`} />

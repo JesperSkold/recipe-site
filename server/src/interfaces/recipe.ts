@@ -11,7 +11,7 @@ export interface Recipe {
 
 export interface Ingredient {
   ingredient: string
-  amount: number
+  amount: string
   unit: string
 }
 
