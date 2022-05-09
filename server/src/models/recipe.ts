@@ -1,4 +1,4 @@
-import { Recipe, Ingredient } from "../interfaces/recipe"
+import { Recipe, Ingredient, Comment } from "../interfaces/recipe"
 import {Schema, model} from "mongoose"
 
 const ingredientSchema = new Schema<Ingredient>({
@@ -7,10 +7,11 @@ const ingredientSchema = new Schema<Ingredient>({
   unit:{type: String, required: true}
 })
 
-// const instructionSchema = new Schema<Instruction>({
-//   instruction:{type: String, required: true},
-//   prio:{type: Number, required: true}
-// })
+const commentsSchema = new Schema<Comment>({
+  name:{type: String, required: true},
+  comment:{type: String, required: true},
+  createdAt: {type: Date, default: Date.now}
+})
 
 const recipeSchema = new Schema<Recipe>({
   title:{ type: String, required: true },
@@ -20,8 +21,8 @@ const recipeSchema = new Schema<Recipe>({
   ratings: [{type: Number, required: true}],
   category: [{type: String, required: true}],
   ingredients: {type: [ingredientSchema], required: true},
-  instructions: [{type: String, required:true}]
-  // instructions: {type: Instruction, required: true}
+  instructions: [{type: String, required:true}],
+  comments: {type: [commentsSchema], required: true}
 })
 
 

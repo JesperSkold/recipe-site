@@ -16,8 +16,9 @@ connect(`${process.env.DB_URI}`, {
  } as ConnectOptions).catch(err => console.log(err))
 
 const app = express();
-const port = process.env.PORT || 3000;
+app.use(express.json())
 app.use(cors())
+const port = process.env.PORT || 3000;
 
 app.use('/recipes', recipeRouter)
 app.use('/category', categoryRouter)

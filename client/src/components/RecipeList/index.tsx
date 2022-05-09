@@ -36,7 +36,6 @@ const RecipeList = () => {
 			dispatch(getAllRecipes())
 		}
 		}, [categoryName]);
-		console.log(loading);
 		
 		return (
 		<StyledSection>

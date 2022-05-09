@@ -4,6 +4,7 @@ import { Recipe } from "../../interfaces/recipe";
 import { useParams } from "react-router-dom";
 import StarRating from "../StarRating";
 import Ratings from "../RecipeListRatings";
+import Comments from "../Comments";
 import {
 	RecipeImg,
 	StyledMain,
@@ -87,6 +88,7 @@ const RecipePage = () => {
 							<RatingTitle>Tack för ditt betyg!</RatingTitle>
 						</RatingContainer>
 					)}
+					<Comments recipeId={recipe[0]._id}></Comments>
 				</StyledMain>
 			)}
 		</>

@@ -27,3 +27,9 @@ export const getRecipeByQuery = async (categoryName: any, searchTerm: any) => {
     return recipe
   }
 }
+
+export const getCommentsById = async (recipeId: string) => {
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/recipes/${recipeId}/comments`)
+  const comments = await response.json()
+  return comments
+}

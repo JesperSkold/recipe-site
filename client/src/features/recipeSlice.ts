@@ -20,7 +20,6 @@ export const getAllRecipesByCategoryQuery = createAsyncThunk(
   "recipes/getAllRecipesByCategoryQuery",
   async (payload:any) => {
     const {categoryName, searchTerm} = payload
-    console.log(categoryName, searchTerm);
     return await getRecipeByQuery(categoryName, searchTerm)
   }
 )

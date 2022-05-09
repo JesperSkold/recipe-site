@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface Recipe {
   _id: string
   title: string
@@ -8,6 +10,14 @@ export interface Recipe {
   category: string[]
   ingredients: Ingredient[]
   instructions: string[]
+  comments: Comment[]
+}
+
+export interface Comment {
+  _id: string
+  name: string
+  comment: string
+  createdAt: string
 }
 
 export interface Ingredient {
