@@ -23,7 +23,7 @@ import { getAllRecipes, getAllRecipesByCategoryName } from "../../features/recip
 const RecipeList = () => {
 	const {categoryName} = useParams()
 	const dispatch = useDispatch<AppDispatch>()
-	const {recipes} = useSelector((state:RootState) => state.recipes)
+	const {recipes, loading} = useSelector((state:RootState) => state.recipes)
 	
 	const calcAvgRating = (rating: number[]) => {
 		return Math.round(rating.reduce((a: any, b: any) => a + b, 0) / rating.length);
@@ -36,7 +36,8 @@ const RecipeList = () => {
 			dispatch(getAllRecipes())
 		}
 		}, [categoryName]);
-
+		console.log(loading);
+		
 		return (
 		<StyledSection>
 			{recipes.length > 0 ? recipes.map((recipe) => (
@@ -60,7 +61,7 @@ const RecipeList = () => {
 						</Link>
 					</FooterWrapper>
 				</StyledArticle>
-			)) : <ErrorMessage>Här var det tomt!</ErrorMessage>}
+			)) : loading === "succeeded" ? <ErrorMessage>Här var det tomt!</ErrorMessage> : null}
 		</StyledSection>
 	);
 };
