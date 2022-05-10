@@ -2,43 +2,59 @@ import styled from "styled-components";
 import { COLORS } from "../../global-styles/global-colors";
 
 export const Wrapper = styled.div`
-  margin: auto;
+	margin: auto;
 	width: 40rem;
 	padding: 0 5rem 5rem 2rem;
 `;
 
 export const CommentsH1 = styled.h1`
 	align-self: flex-start;
+	text-decoration: underline;
 `;
+
+export const ThanksH1 = styled.h1`
+text-align:center
+`
 
 export const CommentTextArea = styled.textarea`
 	width: inherit;
-  padding: 1rem;
+	height: 10rem;
+	padding: 1rem;
 	box-sizing: border-box;
 `;
 
 export const CommentNameInput = styled.input`
-	width: 24.5rem;
+	width: 25.5rem;
 	padding: 1rem 1rem;
 `;
 
 export const SendButton = styled.button`
 	padding: 1rem 0;
-	width: 13.2rem;
+	width: 11.2rem;
+	border-radius: 2rem;
+	margin-left: 1rem;
+	cursor: pointer;
+	background: ${COLORS.secondary};
+	color: white;
+	&:hover {
+		color: black;
+		background: ${COLORS.primary};
+	}
 `;
 
 export const CommentForm = styled.form`
 	margin: 1rem 0;
+	width: inherit;
 `;
 
 export const CommentWrapper = styled.div`
-	/* display: flex;
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 40rem; */
 `;
 
-export const InputWrapper = styled.div``;
+export const InputWrapper = styled.div`
+`;
 
 export const CommentUl = styled.ul`
 	margin: 0;
@@ -64,3 +80,12 @@ export const CommentName = styled.h2``;
 export const CommentDate = styled.p``;
 
 export const CommentText = styled.p``;
+
+export const ErrorUl = styled.ul`
+	display: flex;
+	flex-direction: column;
+`
+
+export const ErrorLi = styled.li`
+	color: red;
+`
