@@ -10,7 +10,6 @@ import {
 	CommentUl,
 	CommentWrapper,
 	CommentForm,
-	SendButton,
 	Wrapper,
 	InputWrapper,
 	ThanksH1,
@@ -20,6 +19,7 @@ import {
 import { getCommentsById } from "../../api/getRecipes";
 import { Comment } from "../../interfaces/recipe";
 import { postComment } from "../../api/postComment";
+import Button from "../Button";
 
 const Comments = ({ recipeId }: any) => {
 	const [comments, setComments] = useState<Comment[]>([]);
@@ -74,7 +74,7 @@ const Comments = ({ recipeId }: any) => {
 					<CommentTextArea placeholder="Din kommentar..." name="comment" onChange={(e) => handleChange(e)}></CommentTextArea>
 					<InputWrapper>
 						<CommentNameInput placeholder="Ditt namn..." name="name" onChange={(e) => handleChange(e)}></CommentNameInput>
-						<SendButton>Skicka</SendButton>
+						<Button style={"largerBtn"}>Skicka</Button>
 					</InputWrapper>
 				</CommentForm>
 			) : (

@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
   body{
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #e3f2e1;
     overflow: overlay;
   }
   /* * { 

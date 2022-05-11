@@ -19,7 +19,6 @@ import {
 	DescriptionInfo,
 	Wrapper,
 	IngredientInstructionContainer,
-	SubTitle,
 	SubTitleContainer,
 	RatingContainer,
 	RatingTitle,
@@ -61,10 +60,6 @@ const RecipePage = () => {
 							<RecipeImg src={recipe[0].imageUrl}></RecipeImg>
 						</DescriptionDiv>
 					</Wrapper>
-					<SubTitleContainer>
-						{/* <SubTitle>Ingredienser</SubTitle>
-						<SubTitle>Gör så här!</SubTitle> */}
-					</SubTitleContainer>
 					<IngredientInstructionContainer>
 						<IngredientUl>
 							<IngredientTitle>Ingredienser</IngredientTitle>

@@ -39,7 +39,7 @@ export const StyledDescription = styled.p`
 `;
 
 export const RecipeInfo = styled.h1`
-	margin-left: 2.5rem;
+	margin-left: 1.5rem;
 `;
 
 export const FlexColumnDiv = styled.div`
@@ -55,10 +55,6 @@ export const StyledTitle = styled.h1`
 	align-self: center;
 `;
 
-export const StyledRating = styled.h1`
-	/* align-self: center; */
-	font-size: 1.5rem;
-`;
 
 export const RecipeButton = styled.button`
 	height: 2.5rem;

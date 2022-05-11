@@ -28,19 +28,6 @@ export const CommentNameInput = styled.input`
 	padding: 1rem 1rem;
 `;
 
-export const SendButton = styled.button`
-	padding: 1rem 0;
-	width: 11.2rem;
-	border-radius: 2rem;
-	margin-left: 1rem;
-	cursor: pointer;
-	background: ${COLORS.secondary};
-	color: white;
-	&:hover {
-		color: black;
-		background: ${COLORS.primary};
-	}
-`;
 
 export const CommentForm = styled.form`
 	margin: 1rem 0;
@@ -54,6 +41,7 @@ export const CommentWrapper = styled.div`
 `;
 
 export const InputWrapper = styled.div`
+display: flex;
 `;
 
 export const CommentUl = styled.ul`

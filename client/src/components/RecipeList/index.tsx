@@ -19,6 +19,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../app/store";
 import { useSelector } from "react-redux";
 import { getAllRecipes, getAllRecipesByCategoryName } from "../../features/recipeSlice";
+import Button from "../Button"
 
 const RecipeList = () => {
 	const {categoryName} = useParams()
@@ -56,7 +57,7 @@ const RecipeList = () => {
 							{recipe.ingredients.length} INGREDIENSER | {recipe.timeInMins}
 						</RecipeInfo>
 						<Link to={`/recipes/${recipe._id}`} style={{ alignSelf: "center" }}>
-							<RecipeButton>Ta mig till receptet!</RecipeButton>
+							<Button>Ta mig till receptet!</Button>
 						</Link>
 					</FooterWrapper>
 				</StyledArticle>

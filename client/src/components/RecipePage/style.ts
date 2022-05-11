@@ -99,11 +99,6 @@ export const RecipeTitle = styled.h1`
   font-size: 2.5rem;
 `;
 
-export const SubTitle = styled.h1`
-	padding: 0;
-	margin: 0;
-`;
-
 export const IngredientTitle = styled.h1`
 margin: 0;
 padding: 0;

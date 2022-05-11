@@ -1,5 +1,5 @@
 import React from "react";
-import {StyledRating} from "../RecipeList/style"
+import {StyledRating} from "./style"
 interface Rating {
 	rating: number
 }
