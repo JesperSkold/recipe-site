@@ -1,15 +1,24 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
 export const HomeLink = styled(Link)`
 	color: white;
 	text-decoration: none;
 `;
 
-export const RecipeLink = styled(Link)`
-	color: white;
+export const RecipeLink = styled(Link)<{paramCategory: any, category:any}>`
+color: white;
 	text-decoration: none;
+	font-weight: ${(props) => {
+    return props.paramCategory === props.category ? "bold" : "normal" 
+  }}; 
+	text-decoration: ${(props) => {
+    return props.paramCategory === props.category ? "underline" : "" 
+  }}; 
+	font-size: ${(props) => {
+    return props.paramCategory === props.category ? "1.2rem" : "" 
+  }}; 
 `;
+
 
 export const TextWrapper = styled.div`
 	position: fixed;

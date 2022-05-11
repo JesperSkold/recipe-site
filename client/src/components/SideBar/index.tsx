@@ -9,6 +9,7 @@ import { getAllRecipes } from "../../features/recipeSlice";
 
 const SideBar = () => {
 	const params = useParams()
+	const {categoryName} = useParams()
 	const [category, setCategory] = useState<string[]>([]);
 	const dispatch = useDispatch<AppDispatch>();
 
@@ -26,7 +27,7 @@ const SideBar = () => {
 			<StyledH1>Kategorier</StyledH1>
 			<StyledUl>
 				{category.map((category) => (
-					<RecipeLink to={`/category/${category}`} key={category} style={{ color: "white" }}>
+					<RecipeLink to={`/category/${category}`} key={category} paramCategory={categoryName} category={category}>
 						<Category>
 							{category.charAt(0).toUpperCase() + category.slice(1)}
 							<CategoryAmount category={category}></CategoryAmount>
