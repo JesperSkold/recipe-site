@@ -20,7 +20,7 @@ const Ratings = ({ rating }:Rating) => {
 		case 5:
 			return <StyledRating>★★★★★</StyledRating>;
 		default:
-			return <StyledRating>No rating</StyledRating>;
+			return <StyledRating>☆☆☆☆☆</StyledRating>;
 	}
 };
 

@@ -5,11 +5,15 @@ export const RecipeImg = styled.img`
 height:auto;
 width: 30rem;
 padding: 1rem;
+border-radius: 100%;
 `;
 
 export const StyledMain = styled.main`
 	margin: auto;
-	width: 60rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* width: 60rem; */
 	background: ${COLORS.primary};
 	min-height: 100vh;
 `;
@@ -20,7 +24,8 @@ export const Wrapper = styled.div`
 
 export const Description = styled.p`
 	overflow-wrap: break-word;
-	padding: 1rem;
+	text-align: center;
+	width: 30rem;
 `;
 
 export const DescriptionMeta = styled.div`
@@ -49,12 +54,15 @@ export const DescriptionInfo = styled.div`
 
 export const IngredientUl = styled.ul`
 	list-style: none;
-	padding: 1rem;
+	/* padding: 1rem; */
+	padding: 0;
+	margin: 0;
 	background: ${COLORS.secondary};
 `;
 
 export const IngredientLi = styled.li`
-margin-top:1rem;
+/* margin-top:1rem; */
+padding: 1rem;
 width: 15rem;
 overflow-wrap: break-word;
 &:first-child{
@@ -83,12 +91,6 @@ export const InstructionLi = styled.li`
 `;
 export const InstructionUl = styled.ul`
 	list-style: none;
-	/* & ${InstructionLi}:nth-child(odd){
-    background-color: red;
-  } */
-	/* li:nth-child(odd){
-    background: black(!important);
-  } */
 `;
 
 
@@ -102,10 +104,23 @@ export const SubTitle = styled.h1`
 	margin: 0;
 `;
 
+export const IngredientTitle = styled.h1`
+margin: 0;
+padding: 0;
+height: 3rem;
+color: black;
+background: ${COLORS.primary};
+`
+
+export const InstructionTitle = styled.h1`
+margin: -.7rem 0 0 1rem;
+color: black;
+`
+
 export const SubTitleContainer = styled.div`
 	display: flex;
 	padding: 0 2rem;
-	gap: 9.5rem;
+	/* gap: 8.5rem; */
 `;
 
 

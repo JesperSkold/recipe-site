@@ -37,6 +37,9 @@ const Comments = ({ recipeId }: any) => {
 		if (!commentData.comment) {
 			errArr.push("Du har inte skrivit en kommentar!");
 		}
+		if (commentData.comment.length > 1500) {
+			errArr.push("Din kommentar är för lång!")
+		}
 		if (!commentData.name) {
 			errArr.push("Var god och fyll i ditt namn!");
 		}

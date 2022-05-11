@@ -24,6 +24,8 @@ import {
 	RatingContainer,
 	RatingTitle,
 	RatingSubTitle,
+	IngredientTitle,
+	InstructionTitle
 } from "./style";
 
 const RecipePage = () => {
@@ -60,11 +62,12 @@ const RecipePage = () => {
 						</DescriptionDiv>
 					</Wrapper>
 					<SubTitleContainer>
-						<SubTitle>Ingredienser</SubTitle>
-						<SubTitle>Gör så här!</SubTitle>
+						{/* <SubTitle>Ingredienser</SubTitle>
+						<SubTitle>Gör så här!</SubTitle> */}
 					</SubTitleContainer>
 					<IngredientInstructionContainer>
 						<IngredientUl>
+							<IngredientTitle>Ingredienser</IngredientTitle>
 							{recipe[0].ingredients.map((ingredient) => (
 								<IngredientLi key={ingredient.ingredient}>
 									{ingredient.amount} {ingredient.unit} {ingredient.ingredient}
@@ -72,6 +75,7 @@ const RecipePage = () => {
 							))}
 						</IngredientUl>
 						<InstructionUl>
+							<InstructionTitle>Gör så här!</InstructionTitle>
 							{recipe[0].instructions.map((instruction) => (
 								<InstructionLi key={instruction}>{instruction}</InstructionLi>
 							))}

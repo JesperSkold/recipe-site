@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 export const HomeLink = styled(Link)`
 	color: white;
 	text-decoration: none;
 `;
 
-export const RecipeLink = styled(Link)<{paramCategory: any, category:any}>`
+export const RecipeLink = styled(Link)<{paramcategory: any, category:any}>`
 color: white;
 	text-decoration: none;
 	font-weight: ${(props) => {
-    return props.paramCategory === props.category ? "bold" : "normal" 
+    return props.paramcategory === props.category ? "bold" : "normal" 
   }}; 
 	text-decoration: ${(props) => {
-    return props.paramCategory === props.category ? "underline" : "" 
+    return props.paramcategory === props.category ? "underline" : "" 
   }}; 
 	font-size: ${(props) => {
-    return props.paramCategory === props.category ? "1.2rem" : "" 
+    return props.paramcategory === props.category ? "1.2rem" : "" 
   }}; 
 `;
 

@@ -27,7 +27,7 @@ const SideBar = () => {
 			<StyledH1>Kategorier</StyledH1>
 			<StyledUl>
 				{category.map((category) => (
-					<RecipeLink to={`/category/${category}`} key={category} paramCategory={categoryName} category={category}>
+					<RecipeLink to={`/category/${category}`} key={category} paramcategory={categoryName} category={category}>
 						<Category>
 							{category.charAt(0).toUpperCase() + category.slice(1)}
 							<CategoryAmount category={category}></CategoryAmount>
