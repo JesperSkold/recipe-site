@@ -13,7 +13,6 @@ export const StyledMain = styled.main`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* width: 60rem; */
 	background: ${COLORS.primary};
 	min-height: 100vh;
 `;
@@ -111,13 +110,6 @@ export const InstructionTitle = styled.h1`
 margin: -.7rem 0 0 1rem;
 color: black;
 `
-
-export const SubTitleContainer = styled.div`
-	display: flex;
-	padding: 0 2rem;
-	/* gap: 8.5rem; */
-`;
-
 
 export const RatingContainer = styled.div`
 text-align: center;

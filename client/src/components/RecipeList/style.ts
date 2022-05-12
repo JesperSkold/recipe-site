@@ -55,19 +55,6 @@ export const StyledTitle = styled.h1`
 	align-self: center;
 `;
 
-
-export const RecipeButton = styled.button`
-	height: 2.5rem;
-	background-color: ${COLORS.secondary};
-	color: white;
-	border-radius: 1rem;
-	&:hover {
-		cursor: pointer;
-		background: none;
-		color: black;
-	}
-`;
-
 export const FooterWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;

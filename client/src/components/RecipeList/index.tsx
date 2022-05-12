@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import calcAvgRating from "../../utils/calculateAverageRating";
 import { Link, useParams } from "react-router-dom";
 import Ratings from "../RecipeListRatings";
+import Button from "../Button"
 import {
 	StyledImg,
 	StyledArticle,
@@ -11,7 +13,6 @@ import {
 	TitleRatingBox,
 	StyledSection,
 	RecipeInfo,
-	RecipeButton,
 	FooterWrapper,
 	ErrorMessage
 } from "./style";
@@ -19,17 +20,12 @@ import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../app/store";
 import { useSelector } from "react-redux";
 import { getAllRecipes, getAllRecipesByCategoryName } from "../../features/recipeSlice";
-import Button from "../Button"
 
 const RecipeList = () => {
 	const {categoryName} = useParams()
 	const dispatch = useDispatch<AppDispatch>()
 	const {recipes, loading} = useSelector((state:RootState) => state.recipes)
 	
-	const calcAvgRating = (rating: number[]) => {
-		return Math.round(rating.reduce((a: number, b: number) => a + b, 0) / rating.length);
-	};
-
 	useEffect(() => {
 		if (categoryName) {
 			dispatch(getAllRecipesByCategoryName(categoryName))
