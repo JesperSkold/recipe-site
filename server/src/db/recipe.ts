@@ -24,6 +24,6 @@ export const postRecipeRating = async (id: string, rating: number) => {
 	return await Recipe.findByIdAndUpdate(id, { $push: { ratings: [rating]}}, {new:true});
 };
 
-export const postRecipeComment = async (id: string, comment: any) => {
+export const postRecipeComment = async (id: string, comment: {name: string, comment: string}) => {
 	return await Recipe.findByIdAndUpdate(id, { $push: { comments: comment }}, {new:true});
 };

@@ -9,7 +9,7 @@ export const FrontBtn = styled.span`
 	color: white;
 	transform: translateY(-6px);
 `;
-export const PushableBtn = styled.button<{largerBtn:any}>`
+export const PushableBtn = styled.button<{largerBtn:string | undefined}>`
 	background: #07241f;
 	border-radius: 12px;
 	border: none;

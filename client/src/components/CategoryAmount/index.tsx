@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { getCategoryCount } from "../../api/getCategory";
 
-const CategoryAmount = ({category}:any) => {
+interface Props {
+  category:string
+}
+
+const CategoryAmount = ({category}:Props) => {
   const [amount, setAmount] = useState()
   useEffect(() => {
     const getCategoryCounts = async () => {

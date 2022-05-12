@@ -21,7 +21,11 @@ import { Comment } from "../../interfaces/recipe";
 import { postComment } from "../../api/postComment";
 import Button from "../Button";
 
-const Comments = ({ recipeId }: any) => {
+interface Props {
+	recipeId: string
+}
+
+const Comments = ({ recipeId }: Props) => {
 	const [comments, setComments] = useState<Comment[]>([]);
 	const [commentData, setCommentData] = useState({ name: "", comment: "" });
 	const [sentComment, setSentComment] = useState(false);

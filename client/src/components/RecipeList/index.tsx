@@ -27,7 +27,7 @@ const RecipeList = () => {
 	const {recipes, loading} = useSelector((state:RootState) => state.recipes)
 	
 	const calcAvgRating = (rating: number[]) => {
-		return Math.round(rating.reduce((a: any, b: any) => a + b, 0) / rating.length);
+		return Math.round(rating.reduce((a: number, b: number) => a + b, 0) / rating.length);
 	};
 
 	useEffect(() => {

@@ -1,4 +1,4 @@
-export const postComment = async (recipeId: string, comment: any) => {
+export const postComment = async (recipeId: string, comment: {name: string, comment: string}) => {
 const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/recipes/${recipeId}/comments`, {
 		method: "POST",
 		mode: "cors",

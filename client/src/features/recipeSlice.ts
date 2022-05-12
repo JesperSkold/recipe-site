@@ -11,14 +11,14 @@ export const getAllRecipes = createAsyncThunk(
 
 export const getAllRecipesByCategoryName = createAsyncThunk(
   "recipes/getAllRecipesByCategoryName",
-  async (category:any) => {
+  async (category:string) => {
     return await getRecipesByCategoryName(category)
   }
 )
 
 export const getAllRecipesByCategoryQuery = createAsyncThunk(
   "recipes/getAllRecipesByCategoryQuery",
-  async (payload:any) => {
+  async (payload:{categoryName: string | undefined, searchTerm: string}) => {
     const {categoryName, searchTerm} = payload
     return await getRecipeByQuery(categoryName, searchTerm)
   }

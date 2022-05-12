@@ -5,7 +5,7 @@ export const HomeLink = styled(Link)`
 	text-decoration: none;
 `;
 
-export const RecipeLink = styled(Link)<{paramcategory: any, category:any}>`
+export const RecipeLink = styled(Link)<{paramcategory: string | undefined, category: string | undefined}>`
 color: white;
 	text-decoration: none;
 	font-weight: ${(props) => {

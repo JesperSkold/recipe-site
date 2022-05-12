@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import { postRecipeRating } from "../api/postRecipeRating";
-const StarRating = ({setShowRating}: any) => {
-	const [rating, setRating] = useState(0); // initial rating value
-// Catch Rating value
+
+interface Props {
+  showRating: boolean;
+  setShowRating: Dispatch<SetStateAction<boolean>>;
+}
+
+const StarRating = ({setShowRating}: Props) => {	
+	const [rating, setRating] = useState(0); 
   const {recipeId} = useParams()
 
 	const handleRating = async (rate: number) => {
@@ -31,7 +36,7 @@ const StarRating = ({setShowRating}: any) => {
 	};
 	return (
 		<div className="App">
-			<Rating onClick={handleRating} ratingValue={rating} /* Available Props */ />
+			<Rating onClick={handleRating} ratingValue={rating} />
 		</div>
 	);
 };
