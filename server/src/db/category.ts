@@ -1,8 +1,6 @@
-// import Category from "../models/category"
 import Recipe from "../models/recipe"
 
 export const getCategories = async () => {
-  // const categories = await Recipe.find({}, {category:true, "_id": false})
   const categories = await Recipe.find().distinct("category")
   return categories
 }
@@ -21,4 +19,5 @@ export const getCategoryCount = async (categoryName:string) => {
   const categoryCount = await Recipe.find({category:categoryName}, {category:true, "_id":false})
   return categoryCount
 }
+
 //abstrahera ut till recipecategory directory?

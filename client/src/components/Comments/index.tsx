@@ -30,7 +30,7 @@ const Comments = ({ recipeId }: Props) => {
 	const [commentData, setCommentData] = useState({ name: "", comment: "" });
 	const [sentComment, setSentComment] = useState(false);
 	const [formErrors, setFormErrors] = useState<string[]>([]);
-
+	const [btnState, setBtnState] = useState(false)
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		setCommentData({ ...commentData, [e.target.name]: e.target.value });
 	};
@@ -53,11 +53,13 @@ const Comments = ({ recipeId }: Props) => {
 		setFormErrors(errArr);
 
 		if (!errArr.length) {
+			setBtnState(true)
 			const commentedRecipe = await postComment(recipeId, commentData);
 			if (commentedRecipe) {
 				const lastComment = commentedRecipe.comments.pop();
 				setComments([...comments, lastComment]);
 				setSentComment(true);
+				setBtnState(false)
 			}
 		}
 	};
@@ -78,7 +80,7 @@ const Comments = ({ recipeId }: Props) => {
 					<CommentTextArea placeholder="Din kommentar..." name="comment" onChange={(e) => handleChange(e)}></CommentTextArea>
 					<InputWrapper>
 						<CommentNameInput placeholder="Ditt namn..." name="name" onChange={(e) => handleChange(e)}></CommentNameInput>
-						<Button style={"largerBtn"}>Skicka</Button>
+						<Button style={"largerBtn"} btnState={btnState}>Skicka</Button>
 					</InputWrapper>
 				</CommentForm>
 			) : (
