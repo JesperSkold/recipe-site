@@ -8,8 +8,6 @@ interface Props {
 }
 
 const Button = (props:Props) => {
-  console.log(props.btnState);
-  
   return (
     <Wrapper>
       <PushableBtn largerBtn={props.style} disabled={props.btnState}>

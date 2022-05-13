@@ -1,4 +1,4 @@
-import express from "express"
+import express, {Request, Response, NextFunction} from "express"
 import {connect, ConnectOptions} from "mongoose"
 import dotenv from "dotenv"
 import path from "path"
@@ -22,6 +22,19 @@ const port = process.env.PORT || 3000;
 
 app.use('/recipes', recipeRouter)
 app.use('/category', categoryRouter)
+
+app.use( (err: { message: string; status: number }, _req: Request, res: Response, _next: NextFunction) => {
+  console.error(err.message)
+  res.status(err.status || 500)
+  res.json({ 
+    error:{ 
+    status: err.status || 500, 
+    message: err.message }})
+});
+
+app.use( (_req, res) => {
+  res.status(404).send("404 not found")
+})
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at https://localhost:${port}`);
