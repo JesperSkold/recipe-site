@@ -14,13 +14,16 @@ export const PushableBtn = styled.button<{largerBtn:string | undefined}>`
 	border-radius: 12px;
 	border: none;
 	padding: 0;
-  margin: ${(props) => (props.largerBtn ? ".5rem 0 .5rem 1rem" : "")};
-  width: ${(props) => (props.largerBtn ? "13rem" : "")};
+  width: ${(props) => (props.largerBtn ? "100%" : "")};
 	cursor: pointer;
 	outline-offset: 4px;
 `;
 
 export const Wrapper = styled.div`
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	${FrontBtn}:active, ${PushableBtn}:active {
 		transform: translateY(-2px);
 	}

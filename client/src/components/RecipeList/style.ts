@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { COLORS } from "../../global-styles/global-colors";
+import { Link } from "react-router-dom";
 
 export const StyledImg = styled.img`
 	object-fit: cover;
@@ -8,6 +9,11 @@ export const StyledImg = styled.img`
 	width: 20rem;
 	border-radius: 1rem;
 `;
+
+export const RecipeLink = styled(Link)`
+	align-self: center;
+	text-decoration: none;
+`
 
 export const StyledArticle = styled.article`
 	margin: 1rem;

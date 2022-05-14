@@ -3,8 +3,12 @@ import { COLORS } from "../../global-styles/global-colors";
 
 export const Wrapper = styled.div`
 	margin: auto;
-	width: 40rem;
-	padding: 0 5rem 5rem 2rem;
+	width: 35vw;
+		
+	@media (max-width:500px){
+		width: 70vw;
+	}
+
 `;
 
 export const CommentsH1 = styled.h1`
@@ -17,15 +21,15 @@ text-align:center
 `
 
 export const CommentTextArea = styled.textarea`
-	width: inherit;
+	width: 100%;
 	height: 10rem;
 	padding: 1rem;
 	box-sizing: border-box;
 `;
 
 export const CommentNameInput = styled.input`
-	width: 25.5rem;
 	padding: 1rem 1rem;
+	width: 130%;
 `;
 
 
@@ -38,10 +42,17 @@ export const CommentWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	@media (max-width:500px){
+		flex-direction: column;
+		text-align: center;
+	}
 `;
 
 export const InputWrapper = styled.div`
-display: flex;
+	display: flex;
+	width: 100%;
+	gap: 1rem;
+	margin-top: .5rem;
 `;
 
 export const CommentUl = styled.ul`

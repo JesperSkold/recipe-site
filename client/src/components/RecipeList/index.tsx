@@ -14,7 +14,8 @@ import {
 	StyledSection,
 	RecipeInfo,
 	FooterWrapper,
-	ErrorMessage
+	ErrorMessage,
+	RecipeLink
 } from "./style";
 import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../app/store";
@@ -52,9 +53,9 @@ const RecipeList = () => {
 						<RecipeInfo>
 							{recipe.ingredients.length} INGREDIENSER | {recipe.timeInMins}
 						</RecipeInfo>
-						<Link to={`/recipes/${recipe._id}`} style={{ alignSelf: "center" }}>
+						<RecipeLink to={`/recipes/${recipe._id}`} >
 							<Button>Ta mig till receptet!</Button>
-						</Link>
+						</RecipeLink>
 					</FooterWrapper>
 				</StyledArticle>
 			)) : loading === "succeeded" ? <ErrorMessage>Här var det tomt!</ErrorMessage> : null}
