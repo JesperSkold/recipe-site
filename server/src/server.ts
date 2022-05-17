@@ -7,7 +7,6 @@ import cors from "cors"
 import recipeRouter from "./routes/recipe"
 import categoryRouter from "./routes/category"
 
-//import types to req and res?
 dotenv.config({ path: path.resolve(__dirname, '../config/local.env') });
 
 connect(`${process.env.DB_URI}`, {
@@ -22,31 +21,6 @@ const port = process.env.PORT || 3000;
 
 app.use('/api/recipes', recipeRouter)
 app.use('/api/category', categoryRouter)
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../dist/build")))
-  app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname,  "../dist/build/index.html"))
-      })
-}
-
-
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "public", "index.html"))
-  // })
-
-
-// app.use('/public', express.static(path.join(__dirname, 'public')));
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "public")))
-// }
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "../../client/build/")))
-
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "client", "build", "index.html"))
-//   })
-// }
 
 app.use( (err: { message: string; status: number }, _req: Request, res: Response, _next: NextFunction) => {
   console.error(err.message)

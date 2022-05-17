@@ -33,6 +33,7 @@ export const StyledParagraph = styled.p`
 `;
 
 export const StyledAside = styled.aside<Hamburger>`
+	z-index: 999;	
 	position: ${(props) => (props.hamburger ? "fixed" : "")};
 	left: ${(props) => (props.hamburger ? "0" : "")};
 	background-color: #125b50;

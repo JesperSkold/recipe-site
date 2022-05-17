@@ -6,7 +6,7 @@ export const StyledImg = styled.img`
 	object-fit: cover;
 	object-position: 50% 50%;
 	height: 12rem;
-	max-width: 20rem;
+	max-width: 12rem;
 	border-radius: 1rem;
 	@media (max-width:768px){
 		align-self: center;
@@ -36,14 +36,23 @@ export const StyledSection = styled.section`
 
 export const TitleRatingBox = styled.div`
 	display: flex;
-	max-width: 25rem;
 
-@media (max-width:425px){
+@media (max-width:768px){
 	flex-direction: column;
 	text-align: center;
 }
 `;
 
+export const StyledTitle = styled.h1`
+	font-size: 1.5rem;
+	overflow-wrap: break-word;
+	margin-left: 1rem;
+	align-self: center;
+
+	@media (max-width:768px){
+		margin:1rem 0 0 0;
+}
+`;
 export const FlexDiv = styled.div`
 	display: flex;
 	@media(max-width:768px){
@@ -53,20 +62,16 @@ export const FlexDiv = styled.div`
 `;
 
 export const StyledDescription = styled.p`
-	max-width: 20rem;
 	overflow-wrap: break-word;
 	margin: 0 1rem 0 1rem;
 	@media (max-width:768px){
 		text-align: center;
-		max-width: fit-content;
 	 }
 `;
 
 export const RecipeInfo = styled.h1`
-	margin-left: 1.5rem;
 	@media (max-width:768px){
 		text-align: center;
-		margin-left: unset;
 	 }
 `;
 
@@ -75,18 +80,6 @@ export const FlexColumnDiv = styled.div`
 	flex-direction: column;
 `;
 
-export const StyledTitle = styled.h1`
-	font-size: 1.5rem;
-	overflow-wrap: break-word;
-	width: 40vw;
-	margin-left: 1rem;
-	align-self: center;
-
-	@media (max-width:425px){
-		margin:1rem 0 0 0;
-}
-
-`;
 
 export const FooterWrapper = styled.div`
 	display: flex;
