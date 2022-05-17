@@ -90,7 +90,7 @@ export const IngredientInstructionContainer = styled.div`
 `;
 
 export const InstructionLi = styled.li`
-	margin: 1rem;
+	margin: 1rem 0;
 	padding: 1rem;
 	background: ${COLORS.secondary};
 	overflow-wrap: break-word;
@@ -113,7 +113,7 @@ export const InstructionUl = styled.ul`
 	}
 `;
 export const InstructionTitle = styled.h1`
-	margin: -0.7rem 0 0 1rem;
+	margin: -0.85rem 0 0 0;
 	color: black;
 	@media(max-width:375px){
 		margin: 0;
