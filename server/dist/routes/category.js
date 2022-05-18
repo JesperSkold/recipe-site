@@ -41,14 +41,4 @@ router.get("/:categoryName/recipes", (req, res, next) => __awaiter(void 0, void 
         next(err);
     }
 }));
-router.get("/:categoryName/count", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const categoryName = req.params.categoryName;
-        const categoryCount = yield (0, category_1.getCategoryCount)(categoryName);
-        res.status(200).json(categoryCount.length);
-    }
-    catch (err) {
-        next(err);
-    }
-}));
 exports.default = router;

@@ -12,11 +12,40 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCategoryCount = exports.getRecipeByCategoryQuery = exports.getRecipeByCategoryName = exports.getCategories = void 0;
+exports.getRecipeByCategoryQuery = exports.getRecipeByCategoryName = exports.getCategories = void 0;
 const recipe_1 = __importDefault(require("../models/recipe"));
 const getCategories = () => __awaiter(void 0, void 0, void 0, function* () {
-    const categories = yield recipe_1.default.find().distinct("category");
-    return categories;
+    const categoryCount = yield recipe_1.default.aggregate([
+        {
+            $unwind: "$category",
+        },
+        {
+            $group: {
+                _id: "$category",
+                count: { $sum: 1 },
+            },
+        },
+        {
+            $sort: {
+                count: -1,
+                _id: -1,
+            },
+        },
+        {
+            $group: {
+                _id: null,
+                counts: {
+                    $push: { k: "$_id", v: "$count" },
+                },
+            },
+        },
+        {
+            $replaceRoot: {
+                newRoot: { $arrayToObject: "$counts" },
+            },
+        },
+    ]);
+    return categoryCount;
 });
 exports.getCategories = getCategories;
 const getRecipeByCategoryName = (categoryName) => __awaiter(void 0, void 0, void 0, function* () {
@@ -25,13 +54,7 @@ const getRecipeByCategoryName = (categoryName) => __awaiter(void 0, void 0, void
 });
 exports.getRecipeByCategoryName = getRecipeByCategoryName;
 const getRecipeByCategoryQuery = (searchQuery, categoryName) => __awaiter(void 0, void 0, void 0, function* () {
-    const recipes = yield recipe_1.default.find({ category: categoryName, title: { $regex: `${searchQuery}`, $options: 'i' } });
+    const recipes = yield recipe_1.default.find({ category: categoryName, title: { $regex: `${searchQuery}`, $options: "i" } });
     return recipes;
 });
 exports.getRecipeByCategoryQuery = getRecipeByCategoryQuery;
-const getCategoryCount = (categoryName) => __awaiter(void 0, void 0, void 0, function* () {
-    const categoryCount = yield recipe_1.default.find({ category: categoryName }, { category: true, "_id": false });
-    return categoryCount;
-});
-exports.getCategoryCount = getCategoryCount;
-//abstrahera ut till recipecategory directory?
