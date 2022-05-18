@@ -1,6 +1,5 @@
 import express from "express";
-import Error from "../interfaces/error";
-import { getCategories, getRecipeByCategoryName, getRecipeByCategoryQuery, getCategoryCount } from "../db/category";
+import { getCategories, getRecipeByCategoryName, getRecipeByCategoryQuery} from "../db/category";
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
@@ -23,16 +22,6 @@ router.get("/:categoryName/recipes", async (req, res, next) => {
       const recipes = await getRecipeByCategoryName(categoryName);
       res.status(200).json(recipes);
     }
-  } catch(err) {
-    next(err)
-  }
-});
-
-router.get("/:categoryName/count", async (req, res, next) => {
-  try{
-    const categoryName = req.params.categoryName;
-    const categoryCount = await getCategoryCount(categoryName);
-    res.status(200).json(categoryCount.length);
   } catch(err) {
     next(err)
   }
