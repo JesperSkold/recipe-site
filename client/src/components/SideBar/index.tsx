@@ -2,26 +2,22 @@ import React, { useState, useEffect } from "react";
 import { StyledAside, StyledH1, StyledUl, Category, HomeLink, RecipeLink, TextWrapper, StyledParagraph, MenuLabel, Icon } from "./style";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../app/store";
+import { AppDispatch, RootState } from "../../app/store";
 import { getAllRecipes } from "../../features/recipeSlice";
 import MediaQuery from "react-responsive";
-import { getCategories } from "../../api/getCategory"
+import { getAllCategories } from "../../features/categorySlice";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
 	const params = useParams();
 	const { categoryName } = useParams();
 	const [click, setClick] = useState(false);
 	const dispatch = useDispatch<AppDispatch>();
-	const [categories, setCategories] = useState([])
+	const {categories} = useSelector((state:RootState) => state.categories)
 
 	useEffect(() => {
-		const getAllCategories = async () => {
-			const categories = await getCategories()
-			setCategories(categories)
-		}
-		getAllCategories()
+		dispatch(getAllCategories())
 	}, []);
-	
 
 	return (
 		<>
