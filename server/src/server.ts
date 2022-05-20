@@ -17,7 +17,7 @@ connect(`${process.env.DB_URI}`, {
 const app = express();
 app.use(express.json())
 app.use(cors())
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 app.use('/api/recipes', recipeRouter)
 app.use('/api/category', categoryRouter)
