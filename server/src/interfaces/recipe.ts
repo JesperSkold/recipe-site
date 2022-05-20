@@ -21,8 +21,3 @@ export interface Ingredient {
   amount: string
   unit: string
 }
-
-// export interface Instruction {
-//   instruction: string
-//   prio: number
-// }
