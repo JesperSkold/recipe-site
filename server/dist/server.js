@@ -18,7 +18,7 @@ dotenv_1.default.config({ path: path_1.default.resolve(__dirname, "../config/loc
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.use("/api/recipes", recipe_1.default);
 app.use("/api/category", category_1.default);
 app.use(express_1.default.static(path_1.default.join(__dirname, "../dist/build")));
