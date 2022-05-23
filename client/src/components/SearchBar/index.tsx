@@ -8,7 +8,14 @@ import { AppDispatch } from "../../app/store";
 const SearchBar = () => {
 	const dispatch = useDispatch<AppDispatch>();
 	const { categoryName } = useParams();
-	const placeHolderText = `Sök bland ${categoryName || "alla"} recept...` 
+	let placeHolderText: string
+
+	if (categoryName) {
+	  placeHolderText = `Sök i kategorin ${categoryName}...`
+	}else{
+		placeHolderText = `Sök bland alla kategorier...`
+	}
+	
 	return (
 		<StyledSearchBar
 			placeholder={placeHolderText}

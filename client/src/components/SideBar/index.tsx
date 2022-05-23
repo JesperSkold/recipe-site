@@ -17,7 +17,7 @@ const SideBar = () => {
 
 	useEffect(() => {
 		dispatch(getAllCategories())
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<>

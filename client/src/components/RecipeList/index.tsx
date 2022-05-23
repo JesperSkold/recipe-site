@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import calcAvgRating from "../../utils/calculateAverageRating";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Ratings from "../RecipeListRatings";
 import Button from "../Button"
 import {
@@ -34,7 +34,7 @@ const RecipeList = () => {
 		}else{
 			dispatch(getAllRecipes())
 		}
-		}, [categoryName]);
+		}, [categoryName, dispatch]);
 		
 		return (
 		<StyledSection>
