@@ -12,7 +12,7 @@ A responsive site where you can browse different food recipes and read/post revi
 
 ![Screenshot 2022-05-19 144011](https://user-images.githubusercontent.com/89381381/169299010-9dfd9fe4-3146-48a3-b731-22bd8e90546a.jpg)
 
-![Screenshot 2022-05-19 144108](https://user-images.githubusercontent.com/89381381/169298988-e42b41d5-992e-43ae-a7a2-7b746301045e.jpg)
+![screenshot](https://user-images.githubusercontent.com/89381381/169811037-26314163-faed-4472-899e-ed7c0ca40ff8.jpg)
 
 ![Screenshot 2022-05-19 164942](https://user-images.githubusercontent.com/89381381/169326182-ef0f7363-8d31-44ac-aebb-801573f7a5e9.jpg)
 
