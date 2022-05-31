@@ -46,6 +46,10 @@ the project further:
 
 - Clone the repo
 - Npm install dependencies in both server and client directory
+- Add config directory in server root
+- Create local.env file in config directory
+- Add DB_URI variable with atlas connection string
+- Add NODE_ENV=development
 - Start server with npm run dev
 - Start the client with npm start
 
