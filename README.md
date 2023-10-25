@@ -58,4 +58,4 @@ the project further:
 **Jesper Olsson**
 
 - [GitHub](https://github.com/JesperSkold)
-- [Email](mailto:skoldfold@gmail.com?subject=Hi)
+- [Email](mailto:jesperolsson.webdev@gmail.com?subject=Hi)
