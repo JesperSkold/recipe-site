@@ -6,7 +6,7 @@ A responsive site where you can browse different food recipes and read/post revi
 
 ## Links
 
-- [Deployed Site](<https://recipe-site.onrender.com//> "https://recipe-site.onrender.com/")
+- [Deployed Site](<https://recipe-site.onrender.com> "https://recipe-site.onrender.com")
 
 ## Screenshots
 
